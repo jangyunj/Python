@@ -1,10 +1,6 @@
 class Solution(object):
-    def findTheDifference(self, s, t):
-        S = list(s)
-        S.sort()
-        T = list(t)
-        T.sort()
-        for i in range(len(S)):
-            if T[i] != S[i]:
-                return T[i]
-        return T[-1]
+    def strStr(self, haystack, needle):
+        if (needle in haystack):
+            return haystack.find(needle)
+        else:
+            return -1
