@@ -1,9 +1,11 @@
+#list needs to be sorted for binary search to work
+
 def binary_search(list, target):
     first = 0
     last = len(list) - 1
 
     while first <= last:
-        midpoint = (first + last) //2   #floor division operator- rounds down to the nearest whole number
+        midpoint = (first + last) //2
 
         if list[midpoint] == target:
             return midpoint
@@ -11,3 +13,16 @@ def binary_search(list, target):
             first = midpoint + 1
         else:
             last = midpoint - 1
+
+    return None
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+def verify(index):
+    if index is not None:
+        print("Target found at:", index)
+    else:
+        print("Target not found in the list")
+
+result = binary_search(numbers, 3)
+verify(result)
